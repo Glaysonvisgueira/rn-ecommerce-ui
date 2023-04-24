@@ -5,20 +5,43 @@ import {
     TitleProduct,
     WrapperQuantityButtons,
     ButtonIcon,
-    Quantity  
+    Quantity,
+    TrashIcon,
+    Price,
+    ContainerSpaceBetween  
   } from "./styles";
   import { useState } from 'react';
+  import {Alert} from 'react-native';
   import { FontAwesome5 } from '@expo/vector-icons'; 
+  import { FontAwesome } from '@expo/vector-icons';
   export default function CartProductCard(props) {
 
     const [quantityProduct, setQuantityProduct] = useState(0)
 
     function increaseProductQuantity(){
-      setQuantityProduct(prev => prev + 1)
+      setQuantityProduct(prev => prev + 1);
     }
 
-    function decreaseProductQuantity(){
-      setQuantityProduct(prev => prev - 1)
+    function decreaseProductQuantity(){      
+      if(quantityProduct < 2){
+        deleteProductFromCart();
+      }else{
+        setQuantityProduct(prev => prev - 1);
+      }
+     
+    }
+
+   
+
+    function deleteProductFromCart(){
+      Alert.alert('', 'Deseja realmente remover o produto do seu carrinho de compras?', [
+        {
+          text: 'Cancelar',
+          onPress: () => console.log('Cancelar Pressionado'),
+          style: 'cancel',
+        },
+        {text: 'remover', onPress: () => console.log('OK Pressed')},
+      ]);
     }
 
     return (
@@ -29,21 +52,33 @@ import {
           PRODUTO
         </TitleProduct>
 
+        <Price>R$ 199,00</Price>
+
+        
+
+       <ContainerSpaceBetween>
         <WrapperQuantityButtons>
 
-          <ButtonIcon onPress={decreaseProductQuantity}>
-            <FontAwesome5 name="minus" size={14} color="white" />
-          </ButtonIcon>
+            <ButtonIcon onPress={decreaseProductQuantity}>
+              <FontAwesome5 name="minus" size={14} color="white" />
+            </ButtonIcon>
 
-          <Quantity>
-            {quantityProduct}
-          </Quantity>
-          
-          <ButtonIcon onPress={increaseProductQuantity}>
-            <FontAwesome5 name="plus" size={14} color="white" />
-          </ButtonIcon>          
+            <Quantity>
+              {quantityProduct}
+            </Quantity>
+
+            <ButtonIcon onPress={increaseProductQuantity}>
+              <FontAwesome5 name="plus" size={14} color="white" />
+            </ButtonIcon>          
+
+          </WrapperQuantityButtons>
+
+          <TrashIcon onPress={deleteProductFromCart}>
+           <FontAwesome name="trash-o" size={18} color="#c91212" />
+          </TrashIcon>
+       </ContainerSpaceBetween>
+
         
-        </WrapperQuantityButtons>
        </Content>
       </ProductCard>
     );

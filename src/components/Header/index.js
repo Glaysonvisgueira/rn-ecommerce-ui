@@ -31,13 +31,13 @@ export default function Header(props) {
              </TouchableOpacity>
          </RowSearchBar>
 
-         <RowCepContainer>
+         {/* <RowCepContainer>
             <TouchableOpacity>
                 <TextCep>
                     Insira seu cep
                 </TextCep>  
             </TouchableOpacity>         
-         </RowCepContainer>
+         </RowCepContainer> */}
         </Container>       
     );
   }

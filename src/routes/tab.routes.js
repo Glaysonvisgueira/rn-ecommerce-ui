@@ -2,15 +2,16 @@ import { useTheme } from 'styled-components'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-//Screens
+//Screens TABS
 import { Home } from '../screens/Home';
 import { FavoritedProducts } from '../screens/FavoritedProducts';
 import { Departaments } from '../screens/Departaments';
 import { Cart } from '../screens/Cart';
 
-//Screens
+//Screens STACKS
 import { ProductDetails } from '../screens/ProductDetails';
 import { BannerContent } from '../screens/BannerContent';
+import { CategoriesProducts } from '../screens/CategoriesProducts';
 
 const { Screen, Navigator } = createBottomTabNavigator();
 const { Screen: ScreenStack, Navigator: NavigatorStack } = createNativeStackNavigator();
@@ -58,7 +59,7 @@ export function TabRoutes(){
                 name="FavoritedProducts"
                 component={FavoritedProducts}     
                 options={{
-                    tabBarBadge: null,
+                    tabBarBadge: 11,
                     tabBarLabel:"Favoritos",
                     tabBarIcon: ({color, size}) => (                       
                         <AntDesign name="heart" size={size} color={color} />
@@ -69,7 +70,7 @@ export function TabRoutes(){
                 name="Cart"
                 component={Cart}     
                 options={{
-                    tabBarBadge: null,
+                    tabBarBadge: 3,
                     tabBarLabel:"Carrinho",
                     tabBarIcon: ({color, size}) => (
                         <Ionicons name="cart" size={size} color={color} />
@@ -91,11 +92,11 @@ export function TabRoutes(){
       }
   
     return(
-        <NavigatorStack>
+        <NavigatorStack screenOptions={{ animation: 'fade_from_bottom' }}>
                 <ScreenStack 
                     name="HomeScreen"
                     component={HomeScreen}
-                    options={{ headerShown: false }}
+                    options={{ headerShown: false }} 
                 />
                 <ScreenStack 
                         name="ProductDetails"
@@ -109,13 +110,31 @@ export function TabRoutes(){
                             headerTitleStyle: {
                             fontFamily: theme.FONTS.BOLD,
                             },
+                           headerShown: false
                          }}
+                        
+                        
                     />
                 <ScreenStack 
                     name="BannerContent"
                     component={BannerContent}
                     options={{ 
-                        title: 'Detalhes do produto',
+                        title: 'Conteúdo do banner',
+                        headerStyle: {
+                        backgroundColor: theme.COLORS.BRAND,
+                        },
+                        headerTintColor: theme.COLORS.BACKGROUND_PRIMARY,
+                        headerTitleStyle: {
+                        fontFamily: theme.FONTS.BOLD,
+                        },
+                       
+                     }}
+                />
+                <ScreenStack 
+                    name="CategoriesProducts"
+                    component={CategoriesProducts}
+                    options={{ 
+                        title: 'Categoria: ',
                         headerStyle: {
                         backgroundColor: theme.COLORS.BRAND,
                         },

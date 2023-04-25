@@ -24,13 +24,13 @@ export const ButtonGoShopping = styled.TouchableOpacity`
   border-radius: 8px;
   margin-top: 10px;
   border-color: ${({ theme }) => theme.COLORS.BRAND};
-  border-width: 2Px;
+  border-width: 2px;
 `;
 
 export const TextGoShopping = styled.Text`  
   color: ${({ theme }) => theme.COLORS.BRAND};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
-  font-size: 16px; 
+  font-size: 14px; 
 `;
 
 export const ButtonGoCheckout = styled.TouchableOpacity`  
@@ -41,11 +41,58 @@ export const ButtonGoCheckout = styled.TouchableOpacity`
   align-items: center;
   border-radius: 8px;
   margin-top: 30px;
-  
 `;
 
 export const TextGoCheckout = styled.Text`  
   color: ${({ theme }) => theme.COLORS.BACKGROUND_PRIMARY};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
+  font-size: 14px; 
+`;
+
+export const WrapperButtons = styled.View`  
+  width: 100%;
+  margin-top: 10px;
+`;
+
+export const WrapperTotalCart = styled.View`  
+  width: 100%;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_SECONDARY};
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 8px;
+`;
+
+export const TextTotal = styled.Text`  
+  color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  font-family: ${({ theme }) => theme.FONTS.REGULAR};
+  font-size: 12px; 
+`;
+
+export const TextTotalPrice = styled.Text`  
+  color: ${({ theme }) => theme.COLORS.BRAND};
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 16px; 
 `;
+
+export const RowSpaceBetween = styled.View`  
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`;
+
+export const Divider = styled.View`  
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top-color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  border-top-width: 1px;
+`;
+
+

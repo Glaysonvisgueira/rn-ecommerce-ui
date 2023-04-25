@@ -35,6 +35,7 @@ export function Home() {
         <DepartamentsCarousel />         
         <CarouselProducts title="Promoções" />
         <Banner />
+        <Banner />
         <CarouselProducts title="Mais procurados" />
         <Banner />
         <CarouselProducts title="Similares" />

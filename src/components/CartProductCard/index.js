@@ -11,12 +11,13 @@ import {
     ContainerSpaceBetween  
   } from "./styles";
   import { useState } from 'react';
-  import {Alert} from 'react-native';
+  import {Alert, ToastAndroid} from 'react-native';
   import { FontAwesome5 } from '@expo/vector-icons'; 
   import { FontAwesome } from '@expo/vector-icons';
+
   export default function CartProductCard(props) {
 
-    const [quantityProduct, setQuantityProduct] = useState(0)
+    const [quantityProduct, setQuantityProduct] = useState(1)
 
     function increaseProductQuantity(){
       setQuantityProduct(prev => prev + 1);
@@ -27,11 +28,16 @@ import {
         deleteProductFromCart();
       }else{
         setQuantityProduct(prev => prev - 1);
-      }
-     
+      }     
     }
 
-   
+    const showToastRemoveProduct = () => {   
+      ToastAndroid.showWithGravity(
+        'Produto removido do carrinho',
+        ToastAndroid.SHORT,
+        ToastAndroid.BOTTOM,
+      )  
+  };
 
     function deleteProductFromCart(){
       Alert.alert('', 'Deseja realmente remover o produto do seu carrinho de compras?', [
@@ -40,7 +46,7 @@ import {
           onPress: () => console.log('Cancelar Pressionado'),
           style: 'cancel',
         },
-        {text: 'remover', onPress: () => console.log('OK Pressed')},
+        {text: 'remover', onPress: () => {showToastRemoveProduct();}},
       ]);
     }
 
@@ -73,7 +79,7 @@ import {
 
           </WrapperQuantityButtons>
 
-          <TrashIcon onPress={deleteProductFromCart}>
+          <TrashIcon onPress={showToastRemoveProduct}>
            <FontAwesome name="trash-o" size={18} color="#c91212" />
           </TrashIcon>
        </ContainerSpaceBetween>

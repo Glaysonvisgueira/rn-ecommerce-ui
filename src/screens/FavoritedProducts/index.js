@@ -16,6 +16,7 @@ export function FavoritedProducts() {
           width: "100%",           
       }}
         vertical
+        showsHorizontalScrollIndicator={false}
       >
         <CardProductHorizontal/>
         <CardProductHorizontal />

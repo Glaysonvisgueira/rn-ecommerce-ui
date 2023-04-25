@@ -40,7 +40,6 @@ export const ButtonGoCheckout = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  margin-top: 30px;
 `;
 
 export const TextGoCheckout = styled.Text`  
@@ -51,12 +50,13 @@ export const TextGoCheckout = styled.Text`
 
 export const WrapperButtons = styled.View`  
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const WrapperTotalCart = styled.View`  
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100%;
   height: auto;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_SECONDARY};
@@ -95,4 +95,19 @@ export const Divider = styled.View`
   border-top-width: 1px;
 `;
 
+export const RowTitle = styled.View`  
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; 
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+`;
+
+export const TitlePage = styled.Text`  
+  color: ${({ theme }) => theme.COLORS.BRAND};
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  font-size: 16px; 
+  margin-left: 15px;
+`;
 

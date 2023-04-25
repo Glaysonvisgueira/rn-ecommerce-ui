@@ -10,19 +10,26 @@ import {
   RowSpaceBetween,
   TextTotal,
   TextTotalPrice,
-  Divider
+  Divider,
+  RowTitle,
+  TitlePage
 } from "./styles";
-
+import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
 import CartProductCard from '../../components/CartProductCard'
+import TextInput from '../../components/TextInput'
 import {View} from 'react-native';
-export function Cart() {
 
+import { FontAwesome5 } from '@expo/vector-icons';
+
+export function Cart(props) {
+
+  const theme = useTheme()
   const navigation = useNavigation();
-
   
   return (
     <Container> 
+     
       <ContainerScroll
          contentContainerStyle={{
           alignItems: 'center',
@@ -33,11 +40,20 @@ export function Cart() {
       }}
         vertical
       >
+         <RowTitle>
+          <FontAwesome5 name="shopping-cart" size={24} color={theme.COLORS.BRAND} />
+          <TitlePage>SEU CARRINHO DE COMPRAS</TitlePage>
+        </RowTitle>
+
         <View>
+       
           <CartProductCard />
           <CartProductCard />
           <CartProductCard />
         </View>
+
+        <TextInput titleInput="Código do vendedor" placeholder="Procure um vendedor"/>
+        <TextInput titleInput="Cupom de desconto" placeholder="Insira um cupom"/>
         
       <WrapperTotalCart>
         <RowSpaceBetween>

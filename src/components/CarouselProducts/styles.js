@@ -12,8 +12,24 @@ export const TitleCarousel = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 16px;
-  text-align: left;
+`;
+
+export const WrapperVejaMais = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextVejaMais = styled.Text`
+  color: ${({ theme }) => theme.COLORS.BRAND};
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  font-size: 10px;
+`;
+
+export const Row = styled.View`
+  flex-direction: row;
   width: 100%;
-  margin-left: 35px;
-  margin-top: 10px;
+  padding: 0px 15px;
+  justify-content: space-between;
+  align-items: center;
 `;

@@ -39,9 +39,10 @@ export function Cart(props) {
           width: "100%",           
       }}
         vertical
+        showsVerticalScrollIndicator={false}
       >
          <RowTitle>
-          <FontAwesome5 name="shopping-cart" size={24} color={theme.COLORS.BRAND} />
+          <FontAwesome5 name="shopping-cart" size={24} color={theme.COLORS.TEXT_PRIMARY} />
           <TitlePage>SEU CARRINHO DE COMPRAS</TitlePage>
         </RowTitle>
 

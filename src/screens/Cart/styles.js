@@ -105,7 +105,7 @@ export const RowTitle = styled.View`
 `;
 
 export const TitlePage = styled.Text`  
-  color: ${({ theme }) => theme.COLORS.BRAND};
+  color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 16px; 
   margin-left: 15px;

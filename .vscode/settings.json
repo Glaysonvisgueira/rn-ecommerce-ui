@@ -18,5 +18,9 @@
     "terminal.integrated.fontSize":14,
   
     // Define o tema dos ícones na sidebar
-    "workbench.iconTheme":"material-icon-theme"
+    "workbench.iconTheme":"material-icon-theme",
+   
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  
+
   }

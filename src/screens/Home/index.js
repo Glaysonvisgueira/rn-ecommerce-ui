@@ -9,8 +9,10 @@ import Header from "../../components/Header";
 import DepartamentsCarousel from '../../components/DepartamentsCarousel'
 import Footer from '../../components/Footer'
 
+
 export function Home() {
   const theme = useTheme()
+  
 
   return (
     <Container>
@@ -31,8 +33,9 @@ export function Home() {
           width: "100%",           
       }}
         vertical
+        showsVerticalScrollIndicator={false}
       >        
-        <DepartamentsCarousel />         
+        <DepartamentsCarousel />    
         <CarouselProducts title="Promoções" />
         <Banner />
         <Banner />

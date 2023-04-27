@@ -19,7 +19,7 @@ import { AntDesign } from '@expo/vector-icons';
 export default function FavoritedProducts() {
 
   const navigation = useNavigation();
-  const [favorite, setFavoriteProduct] = useState(false)
+  const [favorite, setFavoriteProduct] = useState(true)
 
   function handleFavoriteProduct(){
     setFavoriteProduct(!favorite)
@@ -51,7 +51,7 @@ export default function FavoritedProducts() {
 
         <ImageProduct />
         <InfoProductContainer>
-          <Title>TÍTULO</Title>
+          <Title>TÍTULO DO PRODUTO</Title>
           <StarsContainer>
             <FontAwesome name="star" size={12} color="#cfbc15" />  
             <FontAwesome name="star" size={12} color="#cfbc15" />  

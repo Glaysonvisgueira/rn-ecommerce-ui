@@ -11,7 +11,7 @@ export const Container = styled.View`
 `;
 
 export const Input = styled.TextInput`
-  width: 100%;
+  flex: 1;
   height: 38px;
   background-color: #fff;
   padding: 5px 10px;
@@ -19,6 +19,15 @@ export const Input = styled.TextInput`
   border: none;
   margin-right: 10px;
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
+`;
+
+export const ButtonSearch = styled.TouchableOpacity`
+  width: 44px;
+  height: 38px;
+  background-color: ${({ theme }) => theme.COLORS.BRAND};
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
 `;
 
 export const TitleInput = styled.Text`  
@@ -31,4 +40,6 @@ export const Row = styled.View`
   flex-direction: row;
   width: 100%;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_SECONDARY};
+  justify-content: center;
+  align-items: center;
 `;

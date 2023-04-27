@@ -9,7 +9,8 @@ import {
     Container,
     Input,
     Row,
-    TitleInput
+    TitleInput,
+    ButtonSearch
 } from "./styles";
   
 export default function Header(props) {
@@ -26,9 +27,9 @@ export default function Header(props) {
                     autoCorrect
                     placeholder={props.placeholder}
                 /> 
-                <TouchableOpacity>
-                    <FontAwesome name="search" size={34} color={`${theme.mode == 'light' ? '#000': '#fff'}`} />
-                </TouchableOpacity>
+                <ButtonSearch>
+                    <FontAwesome name="search" size={24} color={`${theme.mode == 'dark' ? '#000': '#fff'}`} />
+                </ButtonSearch>
             </Row>
         </Container>       
     );

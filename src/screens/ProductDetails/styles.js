@@ -54,8 +54,8 @@ export const TitleProduct = styled.Text`
 
 export const DescriptionProduct = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   font-size: 12px;
 `;
 
@@ -93,12 +93,68 @@ export const ButtonIcon = styled.TouchableOpacity`
 
 export const WrapperButtons = styled.View`
   width: 100%;
-  height: 150px;  
+  //height: 150px;  
   align-items: flex-start;
   justify-content: center;
-  padding: 10px;
+  //padding: 10px;
   // border-top-color: ${({ theme }) => theme.COLORS.BRAND};
   // border-top-width: 4px;
   margin-top: 20px;
 `;
+
+export const Price = styled.Text`
+  color: ${({ theme }) => theme.COLORS.BRAND};
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+`;
+
+export const NotRealPrice = styled.Text`
+  color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+  font-family: ${({ theme }) => theme.FONTS.REGULAR};
+  font-size: 10px; 
+  text-decoration: line-through;
+`;
+
+export const PriceJuros = styled.Text`
+  color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  font-family: ${({ theme }) => theme.FONTS.REGULAR};
+  font-size: 12px;   
+`;
+
+export const ButtonAddCart = styled.TouchableOpacity`
+  width: 100%;
+  height: 44px;  
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.COLORS.BRAND}; 
+  border-radius: 8px;
+  flex-direction: row;
+`;
+
+export const TextButtonAddCard = styled.Text` 
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_PRIMARY};
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  margin-right: 5px;
+`;
+
+export const ButtonFinishShopping = styled.TouchableOpacity`
+  width: 100%;
+  height: 44px;  
+  align-items: center;
+  justify-content: center;
+  background-color: #109433; 
+  border-radius: 8px;
+  flex-direction: row;
+  margin-top: 10px;
+`;
+
+export const TextButtonFinishShopping = styled.Text` 
+  color: #fff;
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  margin-right: 5px;
+`;
+
+
 

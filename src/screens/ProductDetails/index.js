@@ -10,7 +10,14 @@ import {
   ReviewNote,
   TitleProduct,
   DescriptionProduct,
-  WrapperButtons
+  WrapperButtons,
+  Price,
+  ButtonAddCart,
+  TextButtonAddCard,
+  ButtonFinishShopping,
+  TextButtonFinishShopping,
+  NotRealPrice,
+  PriceJuros
 } from "./styles";
 import { useState } from "react";
 import {ToastAndroid, Share} from 'react-native';
@@ -19,6 +26,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons';
 
 import CustomStatusBar from "../../components/CustomStatusBar";
  
@@ -95,7 +103,7 @@ export function ProductDetails() {
           width: "100%",           
       }}
         vertical
-        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
       >
         <ImageProduct>
           <ReviewBadge>
@@ -106,11 +114,23 @@ export function ProductDetails() {
           </ReviewBadge>
         </ImageProduct>
         <TitleProduct>TÍTULO DO PRODUTO</TitleProduct>
+        <NotRealPrice>De R$ 3199,00</NotRealPrice>
+        <Price>R$ 2800,00</Price>
+        <PriceJuros>Ou 10x 119,99 sem juros</PriceJuros>
         <DescriptionProduct>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</DescriptionProduct>
       </ContainerScroll>
 
-      <WrapperButtons>
 
+      <WrapperButtons>
+      <ButtonAddCart onPress={()=>{navigation.navigate('Cart')}}>
+        <TextButtonAddCard>Adicionar ao carrinho</TextButtonAddCard>
+        <Ionicons name="cart" size={28} color="black" />
+      </ButtonAddCart>
+
+      <ButtonFinishShopping>
+        <TextButtonFinishShopping>Comprar</TextButtonFinishShopping>        
+      </ButtonFinishShopping>
+        
       </WrapperButtons>
            
     </Container>

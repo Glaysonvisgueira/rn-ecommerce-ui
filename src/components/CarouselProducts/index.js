@@ -1,22 +1,33 @@
 import {
   HorizontalScrollView,
-  TitleCarousel
+  TitleCarousel,
+  Row,
+  TextVejaMais,
+  WrapperVejaMais
 } from "./styles";
-
+import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 import CardProduct from "../CardProduct";
 
-/*
-MAIS PROCURADOS
-MAIS ACESSADOS
-FAVORITOS
-ACABOU COMPRANDO
-SIMILARES
-*/
+import { Entypo } from '@expo/vector-icons';
 
 export default function CarouselProducts(props) {
+
+  const theme = useTheme()
+  const navigation = useNavigation();
+
   return (
-    <>
-    <TitleCarousel>{props.title}</TitleCarousel>
+    <>   
+      <Row>
+        <TitleCarousel>{props.title}</TitleCarousel>
+
+        <WrapperVejaMais>
+          <TextVejaMais onPress={() => { navigation.navigate('CategoriesProducts')}}>
+            Veja mais
+          </TextVejaMais>
+        <Entypo name="chevron-right" size={18} color={theme.COLORS.BRAND} />
+        </WrapperVejaMais>
+      </Row>
     <HorizontalScrollView
       horizontal
       showsHorizontalScrollIndicator={false}

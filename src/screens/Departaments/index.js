@@ -26,7 +26,7 @@ export function Departaments() {
           width: "100%",           
       }}
         vertical
-        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
       >
 
         {DEPARTAMENTS.map((item, index)=>(

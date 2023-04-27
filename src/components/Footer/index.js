@@ -1,21 +1,30 @@
-
 import {
-   Container,
-   Logo,
-   SocialMediaContainerButtons,
-   TitleSectionFooter,
-   OptionFooter
+  Container,
+  Logo,
+  SocialMediaContainerButtons,
+  TitleSectionFooter,
+  OptionFooter,
 } from "./styles";
 
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 export default function Footer(props) {
-  return (    
-      <Container>      
-          {/* <Logo />
+  const navigation = useNavigation();
+
+  return (
+    <Container>
+      {/* <Logo />
           <SocialMediaContainerButtons></SocialMediaContainerButtons> */}
 
-          <TitleSectionFooter>FOOTER</TitleSectionFooter>
-          {/* <OptionFooter>Nossas lojas</OptionFooter>           */}
-        
-      </Container>
+      <TitleSectionFooter>FOOTER</TitleSectionFooter>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("NossasLojas");
+        }}
+      >
+        <OptionFooter>Nossas lojas</OptionFooter>
+      </TouchableOpacity>
+    </Container>
   );
 }

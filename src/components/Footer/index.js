@@ -9,6 +9,8 @@ import {
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+import SwitchButton from "../SwitchThemeButton";
+
 export default function Footer(props) {
   const navigation = useNavigation();
 
@@ -16,6 +18,8 @@ export default function Footer(props) {
     <Container>
       {/* <Logo />
           <SocialMediaContainerButtons></SocialMediaContainerButtons> */}
+
+      <SwitchButton />
 
       <TitleSectionFooter>FOOTER</TitleSectionFooter>
       <TouchableOpacity

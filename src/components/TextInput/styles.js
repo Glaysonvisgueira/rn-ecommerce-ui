@@ -19,6 +19,8 @@ export const Input = styled.TextInput`
   border: none;
   margin-right: 10px;
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
+  border-width: 1px;
+  border-color: #ccc;
 `;
 
 export const ButtonSearch = styled.TouchableOpacity`
@@ -30,7 +32,7 @@ export const ButtonSearch = styled.TouchableOpacity`
   border-radius: 4px;
 `;
 
-export const TitleInput = styled.Text`  
+export const TitleInput = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   margin-bottom: 10px;
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};

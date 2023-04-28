@@ -24,6 +24,8 @@ export const RowVendedor = styled.View`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_SECONDARY};
   padding: 10px;
   border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 `;
 
 export const ImageVendedor = styled.View`
@@ -57,5 +59,5 @@ export const WrapperIcons = styled.View`
 export const IconButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  // margin-left: 10px;
 `;

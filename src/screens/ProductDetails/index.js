@@ -1,5 +1,15 @@
-import { 
-  Container, 
+import { useTheme } from "styled-components";
+import { useState } from "react";
+import { ToastAndroid, Share } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+
+import {
+  Container,
   ContainerScroll,
   ButtonGoBack,
   Row,
@@ -17,99 +27,110 @@ import {
   ButtonFinishShopping,
   TextButtonFinishShopping,
   NotRealPrice,
-  PriceJuros
+  PriceJuros,
 } from "./styles";
-import { useState } from "react";
-import {ToastAndroid, Share} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons'; 
-import { Ionicons } from '@expo/vector-icons';
 
 import CustomStatusBar from "../../components/CustomStatusBar";
- 
+
 export function ProductDetails() {
   const navigation = useNavigation();
+  const theme = useTheme();
 
-  const [favorite, setFavoriteProduct] = useState(false)
+  const [favorite, setFavoriteProduct] = useState(false);
 
-    function handleFavoriteProduct(){
-        setFavoriteProduct(!favorite)
-        showToast();
-    }
+  function handleFavoriteProduct() {
+    setFavoriteProduct(!favorite);
+    showToast();
+  }
 
-    const shareProductDetails = async () => {
-      try {
-        const result = await Share.share({
-          message:
-            'React Native | A framework for building native apps using React',
-        });
-        if (result.action === Share.sharedAction) {
-          if (result.activityType) {
-            // shared with activity type of result.activityType
-          } else {
-            // shared
-          }
-        } else if (result.action === Share.dismissedAction) {
-          // dismissed
+  const shareProductDetails = async () => {
+    try {
+      const result = await Share.share({
+        message:
+          "React Native | A framework for building native apps using React",
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
         }
-      } catch (error) {
-        Alert.alert(error.message);
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
       }
-    };
+    } catch (error) {
+      Alert.alert(error.message);
+    }
+  };
 
-    const showToast = () => {
-      if(favorite){
-        ToastAndroid.showWithGravity(
-          'Removido aos favoritos',
-          ToastAndroid.SHORT,
-          ToastAndroid.BOTTOM,
-        );
-      }else{
-        ToastAndroid.showWithGravity(
-          'Adicionado aos favoritos',
-          ToastAndroid.SHORT,
-          ToastAndroid.BOTTOM,
-        );
-      }      
-    };
+  const showToast = () => {
+    if (favorite) {
+      ToastAndroid.showWithGravity(
+        "Removido aos favoritos",
+        ToastAndroid.SHORT,
+        ToastAndroid.BOTTOM
+      );
+    } else {
+      ToastAndroid.showWithGravity(
+        "Adicionado aos favoritos",
+        ToastAndroid.SHORT,
+        ToastAndroid.BOTTOM
+      );
+    }
+  };
 
   return (
-    <Container> 
+    <Container>
       <CustomStatusBar />
       <RowHeaderIcons>
-        <ButtonGoBack onPress={()=>{navigation.goBack()}}>
-          <MaterialIcons name="keyboard-arrow-left" size={38} color="white" />
+        <ButtonGoBack
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
+          <MaterialIcons
+            name="keyboard-arrow-left"
+            size={38}
+            color={theme.mode == "light" ? theme.COLORS.BRAND : "#FFF"}
+          />
         </ButtonGoBack>
 
         <Row>
-          <ButtonIcon onPress={handleFavoriteProduct}>            
-            {favorite ?  <AntDesign name="heart" size={28} color="red" />:  <AntDesign name="hearto" size={28} color="white" />} 
+          <ButtonIcon onPress={handleFavoriteProduct}>
+            {favorite ? (
+              <AntDesign name="heart" size={28} color="red" />
+            ) : (
+              <AntDesign
+                name="hearto"
+                size={28}
+                color={theme.mode == "light" ? theme.COLORS.BRAND : "#FFF"}
+              />
+            )}
           </ButtonIcon>
           <ButtonIcon onPress={shareProductDetails}>
-            <Entypo name="share" size={28} color="white" />
+            <Entypo
+              name="share"
+              size={28}
+              color={theme.mode == "light" ? theme.COLORS.BRAND : "#FFF"}
+            />
           </ButtonIcon>
         </Row>
       </RowHeaderIcons>
-      
-       <ContainerScroll
+
+      <ContainerScroll
         contentContainerStyle={{
-          alignItems: 'flex-start',
-          justifyContent: 'center',
+          alignItems: "flex-start",
+          justifyContent: "center",
         }}
-        style={{ 
-          width: "100%",           
-      }}
+        style={{
+          width: "100%",
+        }}
         vertical
         showsVerticalScrollIndicator={false}
       >
         <ImageProduct>
           <ReviewBadge>
-            <ReviewNote>
-              4.5 (185)
-            </ReviewNote>
+            <ReviewNote>4.5 (185)</ReviewNote>
             <FontAwesome name="star" size={12} color="#cfbc15" />
           </ReviewBadge>
         </ImageProduct>
@@ -117,22 +138,32 @@ export function ProductDetails() {
         <NotRealPrice>De R$ 3199,00</NotRealPrice>
         <Price>R$ 2800,00</Price>
         <PriceJuros>Ou 10x 119,99 sem juros</PriceJuros>
-        <DescriptionProduct>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</DescriptionProduct>
+        <DescriptionProduct>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </DescriptionProduct>
       </ContainerScroll>
 
-
       <WrapperButtons>
-      <ButtonAddCart onPress={()=>{navigation.navigate('Cart')}}>
-        <TextButtonAddCard>Adicionar ao carrinho</TextButtonAddCard>
-        <Ionicons name="cart" size={28} color="black" />
-      </ButtonAddCart>
+        <ButtonAddCart
+          onPress={() => {
+            navigation.navigate("Cart");
+          }}
+        >
+          <TextButtonAddCard>Adicionar ao carrinho</TextButtonAddCard>
+          <Ionicons
+            name="cart"
+            size={28}
+            color={theme.mode == "light" ? "#fff" : "#000"}
+          />
+        </ButtonAddCart>
 
-      <ButtonFinishShopping>
-        <TextButtonFinishShopping>Comprar</TextButtonFinishShopping>        
-      </ButtonFinishShopping>
-        
+        <ButtonFinishShopping>
+          <TextButtonFinishShopping>Comprar</TextButtonFinishShopping>
+        </ButtonFinishShopping>
       </WrapperButtons>
-           
     </Container>
   );
 }

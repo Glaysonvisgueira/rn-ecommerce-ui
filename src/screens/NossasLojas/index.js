@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import MapView, { Marker, Callout } from "react-native-maps";
+import { StyleSheet } from "react-native";
 import {
   TooltipMaker,
   WrapperButtons,
@@ -12,9 +15,7 @@ import {
 import { useTheme } from "styled-components";
 import { useNavigation } from "@react-navigation/native";
 
-import MapView, { Marker, Callout } from "react-native-maps";
-import { StyleSheet } from "react-native";
-import { useEffect, useState } from "react";
+import CustomStatusBar from "../../components/CustomStatusBar";
 
 import {
   requestForegroundPermissionsAsync,
@@ -64,6 +65,7 @@ export function NossasLojas(props) {
 
   return (
     <>
+      <CustomStatusBar />
       {location && (
         <MapView
           showsUserLocation={false}

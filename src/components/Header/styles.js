@@ -5,8 +5,8 @@ export const Container = styled.View`
   height: 80px;
   background-color: ${({ theme }) => theme.COLORS.BRAND};
   padding: 20px 10px;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BRAND};
-  border-bottom-width: 4px;
+  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_PRIMARY};
+  border-bottom-width: 2px;
 `;
 
 export const InputSearch = styled.TextInput`

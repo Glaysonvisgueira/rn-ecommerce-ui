@@ -9,6 +9,7 @@ import Header from "../../components/Header";
 import DepartamentsCarousel from "../../components/DepartamentsCarousel";
 import Footer from "../../components/Footer";
 import CustomStatusBar from "../../components/CustomStatusBar";
+import CarouselBanners from "../../components/CarouselBanners";
 
 export function Home() {
   const theme = useTheme();
@@ -30,6 +31,9 @@ export function Home() {
         showsVerticalScrollIndicator={false}
       >
         <DepartamentsCarousel />
+
+        <CarouselBanners />
+
         <CarouselProducts title="Promoções" />
         <Banner />
         <Banner />

@@ -135,7 +135,7 @@ export function TabRoutes() {
         name="CategoriesProducts"
         component={CategoriesProducts}
         options={{
-          title: "Categoria: ",
+          title: "Categoria",
           headerStyle: {
             backgroundColor: theme.COLORS.BRAND,
           },

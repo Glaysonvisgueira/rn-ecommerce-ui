@@ -39,7 +39,8 @@ export function TabRoutes() {
           headerShown: false,
           tabBarStyle: {
             borderTopColor: theme.COLORS.BRAND,
-            borderTopWidth: 4,
+            borderTopWidth: 2,
+            height: 60,
           },
           tabBarLabelStyle: {
             fontFamily: theme.FONTS.REGULAR,

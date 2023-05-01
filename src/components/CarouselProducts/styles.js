@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const HorizontalScrollView = styled.ScrollView`
-  flexGrow: 0;
+  flexgrow: 0;
   width: 100%;
   height: auto;
   margin-bottom: 10px;

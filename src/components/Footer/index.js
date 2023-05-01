@@ -21,14 +21,14 @@ export default function Footer(props) {
 
       <SwitchButton />
 
-      <TitleSectionFooter>FOOTER</TitleSectionFooter>
-      <TouchableOpacity
+      {/* <TitleSectionFooter>FOOTER</TitleSectionFooter> */}
+      {/* <TouchableOpacity
         onPress={() => {
           navigation.navigate("NossasLojas");
         }}
       >
         <OptionFooter>Nossas lojas</OptionFooter>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </Container>
   );
 }

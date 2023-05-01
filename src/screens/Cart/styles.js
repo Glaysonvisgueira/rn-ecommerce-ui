@@ -12,10 +12,10 @@ export const Container = styled.View`
 `;
 
 export const ContainerScroll = styled.ScrollView`
-   flexGrow: 0;
+  flexgrow: 0;
 `;
 
-export const ButtonGoShopping = styled.TouchableOpacity`  
+export const ButtonGoShopping = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_SECONDARY};
   width: 100%;
   height: 48px;
@@ -27,13 +27,13 @@ export const ButtonGoShopping = styled.TouchableOpacity`
   border-width: 2px;
 `;
 
-export const TextGoShopping = styled.Text`  
+export const TextGoShopping = styled.Text`
   color: ${({ theme }) => theme.COLORS.BRAND};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
-  font-size: 14px; 
+  font-size: 14px;
 `;
 
-export const ButtonGoCheckout = styled.TouchableOpacity`  
+export const ButtonGoCheckout = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.COLORS.BRAND};
   width: 100%;
   height: 48px;
@@ -42,19 +42,19 @@ export const ButtonGoCheckout = styled.TouchableOpacity`
   border-radius: 8px;
 `;
 
-export const TextGoCheckout = styled.Text`  
+export const TextGoCheckout = styled.Text`
   color: ${({ theme }) => theme.COLORS.BACKGROUND_PRIMARY};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
-  font-size: 14px; 
+  font-size: 14px;
 `;
 
-export const WrapperButtons = styled.View`  
+export const WrapperButtons = styled.View`
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 `;
 
-export const WrapperTotalCart = styled.View`  
+export const WrapperTotalCart = styled.View`
   width: 100%;
   margin-top: 5px;
   width: 100%;
@@ -66,19 +66,19 @@ export const WrapperTotalCart = styled.View`
   border-radius: 8px;
 `;
 
-export const TextTotal = styled.Text`  
+export const TextTotal = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
-  font-size: 12px; 
+  font-size: 12px;
 `;
 
-export const TextTotalPrice = styled.Text`  
+export const TextTotalPrice = styled.Text`
   color: ${({ theme }) => theme.COLORS.BRAND};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
-  font-size: 16px; 
+  font-size: 16px;
 `;
 
-export const RowSpaceBetween = styled.View`  
+export const RowSpaceBetween = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -87,27 +87,26 @@ export const RowSpaceBetween = styled.View`
   margin-bottom: 5px;
 `;
 
-export const Divider = styled.View`  
+export const Divider = styled.View`
   width: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-top-color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  border-top-color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
   border-top-width: 1px;
 `;
 
-export const RowTitle = styled.View`  
+export const RowTitle = styled.View`
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center; 
+  align-items: center;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 20px;
 `;
 
-export const TitlePage = styled.Text`  
+export const TitlePage = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
   font-family: ${({ theme }) => theme.FONTS.BOLD};
-  font-size: 16px; 
+  font-size: 16px;
   margin-left: 15px;
 `;
-

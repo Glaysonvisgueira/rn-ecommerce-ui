@@ -17,7 +17,6 @@ export const Input = styled.TextInput`
   padding: 5px 10px;
   border-radius: 4px;
   border: none;
-  margin-right: 10px;
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
   border-width: 1px;
   border-color: #ccc;

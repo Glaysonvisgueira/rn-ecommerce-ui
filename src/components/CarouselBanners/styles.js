@@ -7,9 +7,9 @@ export const Container = styled.View`
   margin-top: 5px;
 `;
 
-export const CarouselCardItemView = styled.View`
+export const CarouselCardItemView = styled.TouchableOpacity`
   width: ${(props) => props.width}px;
-  height: 200px;
+  height: 300px;
   margin-bottom: 10px;
   background-color: ${({ theme }) => theme.COLORS.BRAND};
   border-width: 1px;

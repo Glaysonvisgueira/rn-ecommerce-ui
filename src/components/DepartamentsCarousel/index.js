@@ -31,7 +31,7 @@ export default function DepartamentsCarousel() {
       contentContainerStyle={{ paddingHorizontal: 10 }}
       endFillColor="#000"
     >
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <MaterialIcons
             name="smartphone"
@@ -42,14 +42,14 @@ export default function DepartamentsCarousel() {
         <TitleSection>Celulares</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <MaterialIcons name="kitchen" size={24} color={theme.COLORS.BRAND} />
         </ImageSection>
         <TitleSection>Refrigeradores</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <MaterialCommunityIcons
             name="file-cabinet"
@@ -60,42 +60,42 @@ export default function DepartamentsCarousel() {
         <TitleSection>Armários</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <FontAwesome5 name="snowflake" size={24} color={theme.COLORS.BRAND} />
         </ImageSection>
         <TitleSection>Freezers</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <FontAwesome5 name="fan" size={24} color={theme.COLORS.BRAND} />
         </ImageSection>
         <TitleSection>Ventiladores</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <FontAwesome name="bicycle" size={24} color={theme.COLORS.BRAND} />
         </ImageSection>
         <TitleSection>Bicicletas</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <FontAwesome name="tv" size={24} color={theme.COLORS.BRAND} />
         </ImageSection>
         <TitleSection>Televisores</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToCategory}>
+      <DepartamentSection onPress={goToCategory} activeOpacity={0.5}>
         <ImageSection>
           <FontAwesome5 name="tools" size={24} color={theme.COLORS.BRAND} />
         </ImageSection>
         <TitleSection>Ferramentas</TitleSection>
       </DepartamentSection>
 
-      <DepartamentSection onPress={goToDepartamentScreen}>
+      <DepartamentSection onPress={goToDepartamentScreen} activeOpacity={0.5}>
         <ImageSection allDepartaments={true}>
           <FontAwesome
             name="plus"

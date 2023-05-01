@@ -53,6 +53,7 @@ export default function CarouselBanners(props) {
         onPress={() => {
           navigation.navigate("BannerContent");
         }}
+        activeOpacity={1}
       >
         <ContentTextBanner>
           CONTEÚDO DO BANNER NR: {activeIndex + 1}
@@ -67,7 +68,7 @@ export default function CarouselBanners(props) {
         data={carouselItems}
         style={{
           width: "100%",
-          height: 200,
+          height: "auto",
         }}
         pagingEnabled
         horizontal

@@ -1,7 +1,6 @@
 import { useTheme } from "styled-components";
-import { StatusBar } from "react-native";
+import { View } from "react-native";
 import { Container, ContainerScroll } from "./styles";
-import SwitchButton from "../../components/SwitchThemeButton";
 import CarouselProducts from "../../components/CarouselProducts";
 import UpToTopButton from "../../components/UpToTopButton";
 import Banner from "../../components/Banner";
@@ -10,6 +9,8 @@ import DepartamentsCarousel from "../../components/DepartamentsCarousel";
 import Footer from "../../components/Footer";
 import CustomStatusBar from "../../components/CustomStatusBar";
 import CarouselBanners from "../../components/CarouselBanners";
+import BannerCallToAction from "../../components/BannerCallToAction";
+import CardProductHorizontal from "../../components/CardProductHorizontal";
 
 export function Home() {
   const theme = useTheme();
@@ -31,11 +32,15 @@ export function Home() {
         showsVerticalScrollIndicator={false}
       >
         <DepartamentsCarousel />
-
         <CarouselBanners />
-
+        {/* <BannerCallToAction /> */}
         <CarouselProducts title="Promoções" />
         <Banner />
+        <View style={{ marginHorizontal: 10 }}>
+          <CardProductHorizontal />
+          <CardProductHorizontal />
+          <CardProductHorizontal />
+        </View>
         <Banner />
         <CarouselProducts title="Mais procurados" />
         <Banner />

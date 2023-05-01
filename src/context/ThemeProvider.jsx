@@ -5,8 +5,8 @@ import dark from "../theme/dark";
 import light from "../theme/light";
 
 const themes = {
-  light: dark,
-  dark: light,
+  light: light,
+  dark: dark,
 };
 
 export const ThemeContext = createContext();

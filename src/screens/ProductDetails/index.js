@@ -135,7 +135,7 @@ export function ProductDetails() {
           </ReviewBadge>
         </ImageProduct>
         <TitleProduct>TÍTULO DO PRODUTO</TitleProduct>
-        <NotRealPrice>De R$ 3199,00</NotRealPrice>
+        <NotRealPrice>R$ 3199,00</NotRealPrice>
         <Price>R$ 2800,00</Price>
         <PriceJuros>Ou 10x 119,99 sem juros</PriceJuros>
         <DescriptionProduct>
